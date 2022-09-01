@@ -1,0 +1,11 @@
+## Installs Gitleaks on any given downstream repo pipeline
+
+steps:
+- script: |
+  echo "--Installing git leaks--"
+  brew install gitleaks
+  echo "--git leaks version--"
+  gitleaks version
+  echo "--starting git leaks scanning --"
+  gitleaks detect --source . --report-path gitleaks_results.json --exit-code 1 --verbose --redact
+displayName: Identify Leaks

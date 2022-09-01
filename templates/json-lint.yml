@@ -1,0 +1,11 @@
+##Installs pip3
+steps:
+- script:
+echo "------InstallingNPM------"
+brew install node
+echo "------Installing Json Linter package------"
+npm install jsonlint-dir -g
+echo "------Running linter gainst JSON directory to detect issues------"
+jsonlint -d $(pwd)
+echo "------Finished the JSON linter and no issues were detected------"
+displayName: JSON linter
